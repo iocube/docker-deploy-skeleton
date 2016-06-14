@@ -1,0 +1,4 @@
+.idea/
+.virtualenv/
+*.pyc
+.env.prod
