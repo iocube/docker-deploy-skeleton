@@ -1,0 +1,13 @@
+version: "2"
+services:
+  web:
+    build:
+      context: .
+      dockerfile: webapp.dockerfile
+    depends_on:
+      - db
+  db:
+    build:
+      context: .
+      dockerfile: mongodb.dockerfile
+    command: mongod --config /etc/mongod.conf

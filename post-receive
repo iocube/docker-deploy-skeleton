@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# checkout master branch
+git --work-tree /srv/webapp/src --git-dir /srv/webapp/webapp.git/ checkout -f master
+
+echo "Deploying commit: `git rev-parse HEAD`"
+
+cd /srv/webapp/src
+docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build
+docker-compose logs

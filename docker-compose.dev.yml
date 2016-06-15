@@ -1,0 +1,13 @@
+version: "2"
+services:
+  web:
+    ports:
+      - "80:5000"
+    volumes:
+      - .:/srv/src
+    env_file:
+      - /srv/webapp/.env.dev
+    command: python manage.py runserver
+  db:
+    env_file:
+      - /srv/webapp/.env.dev
