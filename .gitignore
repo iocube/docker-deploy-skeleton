@@ -1,4 +1,8 @@
 .idea/
 .virtualenv/
 *.pyc
+
+# secrets, you want them be ignored so that they not get pushed to your repository for
+# security reasons.
 .env.prod
+.env.dev
