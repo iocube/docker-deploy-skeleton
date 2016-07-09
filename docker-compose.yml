@@ -11,3 +11,7 @@ services:
       context: .
       dockerfile: mongodb.dockerfile
     command: mongod --config /etc/mongod.conf
+  nginx:
+    build:
+      context: .
+      dockerfile: nginx.dockerfile
