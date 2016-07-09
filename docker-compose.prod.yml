@@ -11,3 +11,9 @@ services:
   db:
     env_file:
       - /srv/webapp/.env.prod
+    volumes:
+      - db_data:/data
+
+volumes:
+  db_data:
+    driver: local
