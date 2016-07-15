@@ -5,7 +5,6 @@ services:
       - /srv/webapp/.env.prod
     volumes:
       - /srv/webapp/services/gunicorn:/var/log/gunicorn
-    command: gunicorn --config gunicorn_config.py app:app
   db:
     env_file:
       - /srv/webapp/.env.prod
@@ -16,6 +15,3 @@ services:
       - "80:80"
     volumes:
       - /srv/webapp/services/nginx:/var/log/nginx
-volumes:
-  db_data:
-    driver: local
