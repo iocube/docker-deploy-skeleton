@@ -15,9 +15,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      - nginx_logs:/var
+      - /srv/webapp/services/nginx:/var/log/nginx
 volumes:
   db_data:
-    driver: local
-  nginx_logs:
     driver: local
