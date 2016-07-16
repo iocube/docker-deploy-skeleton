@@ -25,6 +25,8 @@ Create a regular (not an admin) user dedicated for the database this application
 NOTE: You must specify same credentials as in defined in .env.prod file (DATABASE_NAME, DATABASE_USER, DATABASE_PASSWORD).
 `$ use <database_name>`
 `> db.createUser({user: "<user>", pwd: "<strong_password>", roles: [ {role: "readWrite", db: "<database_name>"} ]})`
+i.e
+`> db.createUser({user: "webappuser", pwd: "webapppassword", roles: [ {role: "readWrite", db: "webapp"} ]})`
 
 Example: Remote connection to mongo
 $ mongo <container_ip>:<port>/<database_name> -u <username> -p <password>
@@ -70,3 +72,7 @@ Might be problem with source code (errors).
 Also, it can happen if env file with all credentials does not exist and then database might
 fail to connect.
 Check logs in /srv/webapp/services/gunicorn.
+
+When experimenting be sure to specify needed docker-compose files with `-f` flag when creating containers:
+`$ docker-compose -f docker-compose.yml -f docker-compose.prod.yml create`
+`$ docker-compose start`
