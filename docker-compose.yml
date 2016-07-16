@@ -18,6 +18,3 @@ services:
       dockerfile: nginx.dockerfile
     depends_on:
       - web
-volumes:
-  db_data:
-    driver: local
